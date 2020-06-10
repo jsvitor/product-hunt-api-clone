@@ -1,7 +1,17 @@
 const express = require('express');
+const mongoose = require('mongoose');
 
+// Init App
 const app = express();
 
+// Init DB
+mongoose.connect(
+  "mongodb://localhost:27017/nodeapi",
+  {useNewUrlParser: true, useUnifiedTopology: true}
+);
+
+
+// first route
 app.get('/', (request, response) => {
   // request is the request we make to the server.
   // What can we access in the "request", ( parameters, body, header, user, authentication, ip ...)
